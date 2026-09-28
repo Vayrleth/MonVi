@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MonVi | Panel Gerencia</title>
+<!-- CDN de Font Awesome para los iconos -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="marca"><i class="fa-solid fa-plane"></i> MonVi</div>
+    <div class="enlaces">
+        <span id="nombreUsuario" style="margin-right:14px;color:#e8b566;font-weight:700;">
+            <i class="fa-solid fa-user-gear"></i>
+        </span>
+        <a href="#" id="btnLogout"><i class="fa-solid fa-right-from-bracket"></i> Cerrar Sesión</a>
+    </div>
+</nav>
+
+<div class="contenedor">
+
+    <div class="panel-header">
+        <h1 class="titulo-elegante"><i class="fa-solid fa-chart-line"></i> Panel de la Gerencia</h1>
+        <span class="tag-rol"><i class="fa-solid fa-user-shield"></i> GERENTE</span>
+    </div>
+
+    <div id="mensajeGlobal" class="mensaje-estado" style="display:none;"></div>
+
+    <div class="pestañas">
+        <button data-tab="vuelos" class="activa"><i class="fa-solid fa-plane-departure"></i> Gestión de Vuelos</button>
+        <button data-tab="vendedores"><i class="fa-solid fa-users-gear"></i> Gestión de Vendedores</button>
+        <button data-tab="historial"><i class="fa-solid fa-clock-rotate-left"></i> Historial Global</button>
+        <button data-tab="reportes"><i class="fa-solid fa-file-invoice"></i> Reportes</button>
+    </div>
+
+    <!-- Pestaña: Gestión de Vuelos -->
+    <section class="seccion tab-panel" id="tab-vuelos">
+        <h2 class="titulo-elegante"><i class="fa-solid fa-pen-to-square"></i> Crear / Editar Vuelo</h2>
+        <div class="glass">
+            <form id="formVuelo">
+                <label for="vueloId"><i class="fa-solid fa-hashtag"></i> ID del Vuelo</label>
+                <input type="text" id="vueloId" required placeholder="ej. 4">
+
+                <label for="vueloOrigen"><i class="fa-solid fa-plane-arrival"></i> Origen</label>
+                <input type="text" id="vueloOrigen" required placeholder="ej. Lima">
+
+                <label for="vueloDestino"><i class="fa-solid fa-plane-departure"></i> Destino</label>
+                <input type="text" id="vueloDestino" required placeholder="ej. Santiago">
+
+                <label for="vueloAsientos"><i class="fa-solid fa-chair"></i> Asientos Disponibles</label>
+                <input type="number" id="vueloAsientos" required min="0" placeholder="ej. 100">
+
+                <label for="vueloPrecio"><i class="fa-solid fa-dollar-sign"></i> Precio</label>
+                <input type="number" id="vueloPrecio" required min="0" step="0.01" placeholder="ej. 199.99">
+
+                <label for="vueloEstado"><i class="fa-solid fa-toggle-on"></i> Estado</label>
+                <select id="vueloEstado">
+                    <option value="ACTIVO">ACTIVO</option>
+                    <option value="INACTIVO">INACTIVO</option>
+                </select>
+
+                <button type="submit" class="btn"><i class="fa-solid fa-floppy-disk"></i> Guardar Vuelo</button>
+            </form>
+        </div>
+
+        <h2 class="titulo-elegante" style="margin-top:30px;"><i class="fa-solid fa-list-check"></i> Catálogo Actual</h2>
+        <div id="listaVuelosGerente" class="grid-tarjetas"></div>
+    </section>
+
+    <!-- Pestaña: Gestión de Vendedores -->
+    <section class="seccion tab-panel" id="tab-vendedores" style="display:none;">
+        <h2 class="titulo-elegante"><i class="fa-solid fa-user-plus"></i> Alta de Vendedor</h2>
+        <div class="glass">
+            <form id="formAltaVendedor">
+                <label for="vendUsuario"><i class="fa-solid fa-user"></i> Usuario</label>
+                <input type="text" id="vendUsuario" required placeholder="ej. vend2">
+
+                <label for="vendPassword"><i class="fa-solid fa-key"></i> Contraseña</label>
+                <input type="password" id="vendPassword" required placeholder="Contraseña temporal">
+
+                <button type="submit" class="btn"><i class="fa-solid fa-user-check"></i> Agregar Vendedor</button>
+            </form>
+        </div>
+
+        <h2 class="titulo-elegante" style="margin-top:30px;"><i class="fa-solid fa-user-minus"></i> Baja de Vendedor</h2>
+        <div class="glass">
+            <p style="font-size:0.85rem;opacity:0.75;margin-top:0;">
+                <i class="fa-solid fa-triangle-exclamation"></i> La baja es lógica: revoca el acceso del vendedor de inmediato (evento de prioridad crítica), pero su historial de ventas NUNCA se elimina.
+            </p>
+            <form id="formBajaVendedor">
+                <label for="vendUsuarioBaja"><i class="fa-solid fa-user-xmark"></i> Usuario a Eliminar</label>
+                <input type="text" id="vendUsuarioBaja" required placeholder="ej. vend1">
+
+                <button type="submit" class="btn peligro"><i class="fa-solid fa-trash-can"></i> Eliminar Vendedor</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Pestaña: Historial Global -->
+    <section class="seccion tab-panel" id="tab-historial" style="display:none;">
+        <h2 class="titulo-elegante"><i class="fa-solid fa-book-bookmark"></i> Historial Global de Reservas</h2>
+        <div class="glass">
+            <table>
+                <thead>
+                    <tr>
+                        <th><i class="fa-solid fa-calendar-days"></i> Fecha</th>
+                        <th><i class="fa-solid fa-user"></i> Cliente</th>
+                        <th><i class="fa-solid fa-plane"></i> Vuelo</th>
+                        <th><i class="fa-solid fa-user-tie"></i> Vendedor</th>
+                        <th><i class="fa-solid fa-circle-info"></i> Estado</th>
+                    </tr>
+                </thead>
+                <tbody id="tablaHistorialReservasGlobal"></tbody>
+            </table>
+        </div>
+
+        <h2 class="titulo-elegante" style="margin-top:30px;"><i class="fa-solid fa-vault"></i> Historial Global de Ventas (Inmutable)</h2>
+        <div class="glass">
+            <table>
+                <thead>
+                    <tr>
+                        <th><i class="fa-solid fa-calendar-days"></i> Fecha</th>
+                        <th><i class="fa-solid fa-user-tie"></i> Vendedor</th>
+                        <th><i class="fa-solid fa-user"></i> Cliente</th>
+                        <th><i class="fa-solid fa-plane"></i> Vuelo</th>
+                        <th><i class="fa-solid fa-sack-dollar"></i> Comisión</th>
+                        <th><i class="fa-solid fa-tag"></i> Tipo</th>
+                    </tr>
+                </thead>
+                <tbody id="tablaHistorialVentasGlobal"></tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- Pestaña: Reportes -->
+    <section class="seccion tab-panel" id="tab-reportes" style="display:none;">
+        <h2 class="titulo-elegante"><i class="fa-solid fa-diagram-project"></i> Generación de Reportes</h2>
+        <div class="glass">
+            <p style="font-size:0.85rem;opacity:0.75;">
+                <i class="fa-solid fa-gear"></i> Este reporte es generado por un PROCESO INDEPENDIENTE (fork + exec), comunicado con el servidor principal a través de tuberías POSIX (pipes).
+            </p>
+            <button id="btnGenerarReporte" class="btn secundario">
+                <i class="fa-solid fa-gears"></i> Generar Reporte
+            </button>
+            <pre id="salidaReporte" style="margin-top:16px; white-space:pre-wrap; background:rgba(0,0,0,0.06); padding:14px; border-radius:10px;"></pre>
+        </div>
+    </section>
+
+</div>
+
+<footer>MonVi &copy; 2026 — Panel de la Gerencia</footer>
+
+<script src="js/gerente.js"></script>
+</body>
+</html>

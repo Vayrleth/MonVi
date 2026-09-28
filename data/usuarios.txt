@@ -1,0 +1,3 @@
+gerente1,admin123,GERENTE,ACTIVO
+vend1,vend123,VENDEDOR,ACTIVO
+cliente1,cli123,CLIENTE,ACTIVO

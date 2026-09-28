@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MonVi | Aerolínea</title>
+<!-- CDN de Font Awesome para los iconos -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="marca"><i class="fa-solid fa-plane"></i> MonVi</div>
+    <div class="enlaces">
+        <a href="index.html"><i class="fa-solid fa-house"></i> Inicio</a>
+        <a href="login.html"><i class="fa-solid fa-right-to-bracket"></i> Iniciar Sesión</a>
+        <a href="login.html?registro=1"><i class="fa-solid fa-user-plus"></i> Registrarse</a>
+    </div>
+</nav>
+
+<header class="hero">
+    <h1 class="titulo-elegante">Vuela con MonVi</h1>
+    <p>Tu próximo destino empieza antes de despegar.</p>
+    <a href="login.html" class="btn"><i class="fa-solid fa-ticket"></i> Reservar Ahora</a>
+</header>
+
+<div class="contenedor">
+
+    <section class="seccion">
+        <h2 class="titulo-elegante">Vuelos Disponibles</h2>
+        <div id="mensajeCarga" class="mensaje-estado" style="display:none;"></div>
+        <div id="listaVuelosPublicos" class="grid-tarjetas"></div>
+    </section>
+
+    <section class="seccion">
+        <h2 class="titulo-elegante">Lo que dicen nuestros clientes</h2>
+        <div id="listaTestimonios" class="glass"></div>
+    </section>
+
+</div>
+
+<footer>
+    MonVi &copy; 2026 — Sistema de Gestión de Aerolínea
+</footer>
+
+<script src="js/home.js"></script>
+</body>
+</html>

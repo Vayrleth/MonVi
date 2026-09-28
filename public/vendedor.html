@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MonVi | Panel Vendedor</title>
+<!-- CDN de Font Awesome para los iconos -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="marca"><i class="fa-solid fa-plane"></i> MonVi</div>
+    <div class="enlaces">
+        <span id="nombreUsuario" style="margin-right:14px;color:#e8b566;font-weight:700;">
+            <i class="fa-solid fa-user-tie"></i>
+        </span>
+        <a href="#" id="btnLogout"><i class="fa-solid fa-right-from-bracket"></i> Cerrar Sesión</a>
+    </div>
+</nav>
+
+<div class="contenedor">
+
+    <div class="panel-header">
+        <h1 class="titulo-elegante"><i class="fa-solid fa-cash-register"></i> Panel del Vendedor</h1>
+        <span class="tag-rol"><i class="fa-solid fa-user-tag"></i> VENDEDOR</span>
+    </div>
+
+    <div id="mensajeGlobal" class="mensaje-estado" style="display:none;"></div>
+
+    <section class="seccion">
+        <h2 class="titulo-elegante"><i class="fa-solid fa-cart-plus"></i> Venta Asistida</h2>
+        <div class="glass">
+            <form id="formVenta">
+                <label for="ventaCliente"><i class="fa-solid fa-user"></i> Usuario del Cliente</label>
+                <input type="text" id="ventaCliente" required placeholder="ej. cliente1">
+
+                <label for="ventaVuelo"><i class="fa-solid fa-plane-departure"></i> Vuelo a Reservar</label>
+                <select id="ventaVuelo" required></select>
+
+                <button type="submit" class="btn"><i class="fa-solid fa-check"></i> Registrar Venta</button>
+            </form>
+        </div>
+    </section>
+
+    <section class="seccion">
+        <h2 class="titulo-elegante"><i class="fa-solid fa-right-left"></i> Transferencia de Reservas entre Vuelos</h2>
+        <div class="glass">
+            <p style="font-size:0.85rem;opacity:0.75;margin-top:0;">
+                <i class="fa-solid fa-shield-halved"></i> Protegida internamente con el algoritmo de Peterson y un mecanismo de evasión de deadlocks cuando dos transferencias cruzadas ocurren al mismo tiempo.
+            </p>
+            <form id="formTransferencia">
+                <label for="idReservaTransferir"><i class="fa-solid fa-ticket"></i> ID de Reserva</label>
+                <input type="text" id="idReservaTransferir" required placeholder="ej. 1-cliente1-1234567">
+
+                <label for="vueloOrigenTransferir"><i class="fa-solid fa-plane-departure"></i> Vuelo de Origen</label>
+                <input type="text" id="vueloOrigenTransferir" required placeholder="ej. 1">
+
+                <label for="vueloDestinoTransferir"><i class="fa-solid fa-plane-arrival"></i> Vuelo de Destino</label>
+                <input type="text" id="vueloDestinoTransferir" required placeholder="ej. 2">
+
+                <label for="clienteTransferir"><i class="fa-solid fa-user"></i> Usuario del Cliente</label>
+                <input type="text" id="clienteTransferir" required placeholder="ej. cliente1">
+
+                <button type="submit" class="btn secundario"><i class="fa-solid fa-arrow-switch"></i> Transferir Reserva</button>
+            </form>
+        </div>
+    </section>
+
+    <section class="seccion">
+        <h2 class="titulo-elegante"><i class="fa-solid fa-receipt"></i> Historial de Ventas y Comisiones (Inmutable)</h2>
+        <div class="glass">
+            <table>
+                <thead>
+                    <tr>
+                        <th><i class="fa-solid fa-calendar-days"></i> Fecha</th>
+                        <th><i class="fa-solid fa-user"></i> Cliente</th>
+                        <th><i class="fa-solid fa-plane"></i> Vuelo</th>
+                        <th><i class="fa-solid fa-sack-dollar"></i> Comisión</th>
+                        <th><i class="fa-solid fa-tag"></i> Tipo</th>
+                    </tr>
+                </thead>
+                <tbody id="tablaHistorialVendedor"></tbody>
+            </table>
+        </div>
+    </section>
+
+</div>
+
+<footer>MonVi &copy; 2026 — Panel del Vendedor</footer>
+
+<script src="js/vendedor.js"></script>
+</body>
+</html>
