@@ -116,28 +116,42 @@ void RestServer::atenderCliente(int clienteFd) {
     }
 
     if (!crudo.empty()) {
-        HttpRequest req = parsearPeticion(crudo);
-        HttpResponse resp;
+    HttpRequest req = parsearPeticion(crudo);
+    HttpResponse resp;
 
-        // Archivos estaticos del frontend (todo lo que no empiece con /api/)
-        if (req.ruta.rfind("/api/", 0) != 0) {
-            std::string contenido = servirArchivoEstatico(req.ruta);
-            if (!contenido.empty()) {
-                std::string tipoMime = "text/plain";
-                if (req.ruta.size() >= 5 && req.ruta.substr(req.ruta.size()-5) == ".html") tipoMime = "text/html";
-                else if (req.ruta.size() >= 4 && req.ruta.substr(req.ruta.size()-4) == ".css") tipoMime = "text/css";
-                else if (req.ruta.size() >= 3 && req.ruta.substr(req.ruta.size()-3) == ".js") tipoMime = "application/javascript";
-                else if (req.ruta.size() >= 4 && req.ruta.substr(req.ruta.size()-4) == ".jpg") tipoMime = "image/jpeg";
-                else if (req.ruta.size() >= 4 && req.ruta.substr(req.ruta.size()-4) == ".png") tipoMime = "image/png";
+    // Archivos estáticos del frontend (todo lo que no empiece con /api/)
+    if (req.ruta.rfind("/api/", 0) != 0) {
+        // Si piden la raíz "/", servir index.html por defecto
+        std::string rutaBuscar = (req.ruta == "/") ? "/index.html" : req.ruta;
 
-                std::string encabezado = "HTTP/1.1 200 OK\r\nContent-Type: " + tipoMime + "\r\nContent-Length: " +
-                    std::to_string(contenido.size()) + "\r\nConnection: close\r\n\r\n";
-                write(clienteFd, encabezado.c_str(), encabezado.size());
-                write(clienteFd, contenido.c_str(), contenido.size());
-                close(clienteFd);
-                return;
+        std::string contenido = servirArchivoEstatico(rutaBuscar);
+        if (!contenido.empty()) {
+            std::string tipoMime = "text/plain";
+
+            // Determinar tipo MIME de forma segura
+            if (rutaBuscar.rfind(".html") != std::string::npos) {
+                tipoMime = "text/html; charset=UTF-8";
+            } else if (rutaBuscar.rfind(".css") != std::string::npos) {
+                tipoMime = "text/css; charset=UTF-8";
+            } else if (rutaBuscar.rfind(".js") != std::string::npos) {
+                tipoMime = "application/javascript; charset=UTF-8";
+            } else if (rutaBuscar.rfind(".jpg") != std::string::npos || rutaBuscar.rfind(".jpeg") != std::string::npos) {
+                tipoMime = "image/jpeg";
+            } else if (rutaBuscar.rfind(".png") != std::string::npos) {
+                tipoMime = "image/png";
+            } else if (rutaBuscar.rfind(".json") != std::string::npos) {
+                tipoMime = "application/json";
             }
+
+            std::string encabezado = "HTTP/1.1 200 OK\r\nContent-Type: " + tipoMime + "\r\nContent-Length: " +
+                std::to_string(contenido.size()) + "\r\nConnection: close\r\n\r\n";
+
+            write(clienteFd, encabezado.c_str(), encabezado.size());
+            write(clienteFd, contenido.c_str(), contenido.size());
+            close(clienteFd);
+            return;
         }
+    }
 
         auto it = rutas_.find(req.metodo + " " + req.ruta);
         if (it != rutas_.end()) {
