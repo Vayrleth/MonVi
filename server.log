@@ -1,0 +1,8 @@
+nohup: ignoring input
+[InterruptTable] Manejadores de señales instalados (SIGINT, SIGTERM, SIGUSR1).
+==================================================================
+ Sistema de Gestion de Aerolinea -- Servidor Backend C++17 (Linux)
+ Landing Page:  http://localhost:8080/index.html
+ Login:         http://localhost:8080/login.html
+==================================================================
+[RestServer] Servidor escuchando en http://0.0.0.0:8081

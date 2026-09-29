@@ -3,3 +3,37 @@
 2026-09-28 16:05:31 | [DEADLOCK-DEMO] HiloTransferenciaVueloB->A obtuvo ambos recursos (Vuelo A y Vuelo B) en el intento 1. Transferencia simulada completada.
 2026-09-28 16:05:31 | [DEADLOCK-DEMO] Demostracion de deadlock controlado finalizada sin bloqueo permanente.
 2026-09-28 16:09:28 | Apagado seguro del servidor completado (buffers volcados a disco).
+2026-09-28 17:28:32 | Iniciando demostracion controlada de deadlock (transferencia cruzada de vuelos)...
+2026-09-28 17:28:32 | [DEADLOCK-DEMO] HiloTransferenciaVueloA->B obtuvo ambos recursos (Vuelo A y Vuelo B) en el intento 1. Transferencia simulada completada.
+2026-09-28 17:28:32 | [DEADLOCK-DEMO] HiloTransferenciaVueloB->A obtuvo ambos recursos (Vuelo A y Vuelo B) en el intento 1. Transferencia simulada completada.
+2026-09-28 17:28:32 | [DEADLOCK-DEMO] Demostracion de deadlock controlado finalizada sin bloqueo permanente.
+2026-09-28 17:44:01 | Apagado seguro del servidor completado (buffers volcados a disco).
+2026-09-28 22:05:33 | Iniciando demostracion controlada de deadlock (transferencia cruzada de vuelos)...
+2026-09-28 22:05:34 | [DEADLOCK-DEMO] HiloTransferenciaVueloA->B obtuvo ambos recursos (Vuelo A y Vuelo B) en el intento 1. Transferencia simulada completada.
+2026-09-28 22:05:34 | [DEADLOCK-DEMO] HiloTransferenciaVueloB->A obtuvo ambos recursos (Vuelo A y Vuelo B) en el intento 1. Transferencia simulada completada.
+2026-09-28 22:05:34 | [DEADLOCK-DEMO] Demostracion de deadlock controlado finalizada sin bloqueo permanente.
+2026-09-28 22:07:41 | Iniciando demostracion controlada de deadlock (transferencia cruzada de vuelos)...
+2026-09-28 22:07:41 | [DEADLOCK-DEMO] HiloTransferenciaVueloA->B obtuvo ambos recursos (Vuelo A y Vuelo B) en el intento 1. Transferencia simulada completada.
+2026-09-28 22:07:41 | [DEADLOCK-DEMO] HiloTransferenciaVueloB->A obtuvo ambos recursos (Vuelo A y Vuelo B) en el intento 1. Transferencia simulada completada.
+2026-09-28 22:07:41 | [DEADLOCK-DEMO] Demostracion de deadlock controlado finalizada sin bloqueo permanente.
+2026-09-28 22:07:41 | Apagado seguro del servidor completado (buffers volcados a disco).
+2026-09-28 22:11:29 | Apagado seguro del servidor completado (buffers volcados a disco).
+2026-09-28 22:30:28 | Iniciando demostracion controlada de deadlock (transferencia cruzada de vuelos)...
+2026-09-28 22:30:28 | [DEADLOCK-DEMO] HiloTransferenciaVueloA->B obtuvo ambos recursos (Vuelo A y Vuelo B) en el intento 1. Transferencia simulada completada.
+2026-09-28 22:30:28 | [DEADLOCK-DEMO] HiloTransferenciaVueloB->A obtuvo ambos recursos (Vuelo A y Vuelo B) en el intento 1. Transferencia simulada completada.
+2026-09-28 22:30:28 | [DEADLOCK-DEMO] Demostracion de deadlock controlado finalizada sin bloqueo permanente.
+2026-09-28 22:30:28 | Apagado seguro del servidor completado (buffers volcados a disco).
+2026-09-28 22:35:12 | Iniciando demostracion controlada de deadlock (transferencia cruzada de vuelos)...
+2026-09-28 22:35:12 | [DEADLOCK-DEMO] HiloTransferenciaVueloA->B obtuvo ambos recursos (Vuelo A y Vuelo B) en el intento 1. Transferencia simulada completada.
+2026-09-28 22:35:12 | [DEADLOCK-DEMO] HiloTransferenciaVueloB->A obtuvo ambos recursos (Vuelo A y Vuelo B) en el intento 1. Transferencia simulada completada.
+2026-09-28 22:35:12 | [DEADLOCK-DEMO] Demostracion de deadlock controlado finalizada sin bloqueo permanente.
+2026-09-28 22:37:12 | Apagado seguro del servidor completado (buffers volcados a disco).
+2026-09-28 22:37:37 | Iniciando demostracion controlada de deadlock (transferencia cruzada de vuelos)...
+2026-09-28 22:37:37 | [DEADLOCK-DEMO] HiloTransferenciaVueloA->B obtuvo ambos recursos (Vuelo A y Vuelo B) en el intento 1. Transferencia simulada completada.
+2026-09-28 22:37:37 | [DEADLOCK-DEMO] HiloTransferenciaVueloB->A obtuvo ambos recursos (Vuelo A y Vuelo B) en el intento 1. Transferencia simulada completada.
+2026-09-28 22:37:37 | [DEADLOCK-DEMO] Demostracion de deadlock controlado finalizada sin bloqueo permanente.
+2026-09-28 22:37:46 | Apagado seguro del servidor completado (buffers volcados a disco).
+2026-09-28 22:39:19 | Iniciando demostracion controlada de deadlock (transferencia cruzada de vuelos)...
+2026-09-28 22:39:19 | [DEADLOCK-DEMO] HiloTransferenciaVueloA->B obtuvo ambos recursos (Vuelo A y Vuelo B) en el intento 1. Transferencia simulada completada.
+2026-09-28 22:39:19 | [DEADLOCK-DEMO] HiloTransferenciaVueloB->A obtuvo ambos recursos (Vuelo A y Vuelo B) en el intento 1. Transferencia simulada completada.
+2026-09-28 22:39:19 | [DEADLOCK-DEMO] Demostracion de deadlock controlado finalizada sin bloqueo permanente.

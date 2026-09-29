@@ -1,0 +1,5 @@
+/home/monvi/aerolinea_project/build/CMakeFiles/aerolinea_server.dir
+/home/monvi/aerolinea_project/build/CMakeFiles/process_reports.dir
+/home/monvi/aerolinea_project/build/CMakeFiles/preparar_entorno.dir
+/home/monvi/aerolinea_project/build/CMakeFiles/edit_cache.dir
+/home/monvi/aerolinea_project/build/CMakeFiles/rebuild_cache.dir

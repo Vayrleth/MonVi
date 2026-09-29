@@ -31,6 +31,7 @@
 #include <csignal>
 #include <cstring>
 #include <ctime>
+#include <cstdlib>
 
 // ----------------------------------------------------------------------------
 // Recursos globales de sincronizacion (compartidos entre hilos del proceso
@@ -211,7 +212,9 @@ int main() {
     // ==========================================================================
     // REGISTRO DE RUTAS DE LA API REST
     // ==========================================================================
-    RestServer servidor(8080);
+    const char* env_p = std::getenv("PORT");
+    int puerto = (env_p != nullptr) ? std::atoi(env_p) : 8081;
+    RestServer servidor(puerto);
 
     // --- OPTIONS generico (CORS preflight) para todas las rutas /api/* -------
     // (Se maneja de forma simplificada respondiendo 200 vacio si el navegador

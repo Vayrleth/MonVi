@@ -1,0 +1,298 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+
+:root {
+    --azul-vibrante: #2f8fff;
+    --azul-glow: rgba(47, 143, 255, 0.55);
+    --dorado: #e8b566;
+    --vidrio: rgba(255, 255, 255, 0.88);
+    --vidrio-oscuro: rgba(15, 20, 35, 0.72);
+    --texto-oscuro: #1b2330;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+    margin: 0;
+    padding: 0;
+    min-height: 100%;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    color: var(--texto-oscuro);
+}
+
+body {
+    background-image:
+        linear-gradient(180deg, rgba(5, 8, 20, 0.55) 0%, rgba(10, 12, 25, 0.75) 55%, rgba(5, 6, 15, 0.9) 100%),
+        url('../img/aeropuerto.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    min-height: 100vh;
+}
+
+h1, h2, h3, .titulo-elegante {
+    font-family: 'Cinzel', serif;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+a { text-decoration: none; color: inherit; }
+
+/* ---------------------- NAVBAR ---------------------- */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 36px;
+    background: var(--vidrio-oscuro);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    color: #fff;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.navbar .marca {
+    font-family: 'Cinzel', serif;
+    font-size: 1.4rem;
+    letter-spacing: 2px;
+    color: var(--dorado);
+}
+
+.navbar .enlaces a {
+    margin-left: 22px;
+    color: #f0f2f8;
+    font-weight: 600;
+    transition: color 0.25s ease, text-shadow 0.25s ease;
+}
+.navbar .enlaces a:hover {
+    color: var(--azul-vibrante);
+    text-shadow: 0 0 10px var(--azul-glow);
+}
+
+/* ---------------------- CONTENEDORES GLASSMORPHISM ---------------------- */
+.glass {
+    background: var(--vidrio);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 18px;
+    border: 1px solid rgba(255,255,255,0.5);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.25);
+    padding: 28px;
+}
+
+.contenedor {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 40px 24px 80px;
+}
+
+/* ---------------------- HERO ---------------------- */
+.hero {
+    text-align: center;
+    padding: 90px 24px 60px;
+    color: #fff;
+}
+.hero h1 {
+    font-size: clamp(2.2rem, 5vw, 3.6rem);
+    margin-bottom: 10px;
+    text-shadow: 0 4px 24px rgba(0,0,0,0.6);
+}
+.hero p {
+    font-size: 1.1rem;
+    opacity: 0.92;
+    max-width: 640px;
+    margin: 0 auto 30px;
+}
+
+/* ---------------------- TARJETAS ---------------------- */
+.grid-tarjetas {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 22px;
+    margin-top: 26px;
+}
+
+.tarjeta {
+    background: var(--vidrio);
+    backdrop-filter: blur(10px);
+    border-radius: 16px;
+    padding: 22px;
+    border: 1px solid rgba(255,255,255,0.5);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.18);
+    transition: transform 0.28s ease, box-shadow 0.28s ease, opacity 0.28s ease;
+    opacity: 0.94;
+}
+.tarjeta:hover {
+    transform: translateY(-6px);
+    opacity: 1;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.35);
+}
+
+.tarjeta h3 {
+    color: var(--texto-oscuro);
+    margin-top: 0;
+}
+
+.tarjeta .precio {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--azul-vibrante);
+}
+
+/* ---------------------- BOTONES ---------------------- */
+.btn {
+    display: inline-block;
+    padding: 12px 26px;
+    border-radius: 999px;
+    border: none;
+    font-weight: 700;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    cursor: pointer;
+    background: linear-gradient(135deg, #2f8fff, #1a5fd0);
+    color: #fff;
+    transition: transform 0.22s ease, box-shadow 0.22s ease, background 0.3s ease;
+    box-shadow: 0 4px 14px rgba(47,143,255,0.35);
+}
+.btn:hover {
+    transform: scale(1.05);
+    background: linear-gradient(135deg, #4aa3ff, #2f8fff);
+    box-shadow: 0 0 22px var(--azul-glow), 0 8px 20px rgba(0,0,0,0.25);
+}
+.btn.secundario {
+    background: linear-gradient(135deg, #e8b566, #c98f3a);
+    box-shadow: 0 4px 14px rgba(232,181,102,0.35);
+}
+.btn.secundario:hover {
+    background: linear-gradient(135deg, #f0c785, #e8b566);
+    box-shadow: 0 0 22px rgba(232,181,102,0.55), 0 8px 20px rgba(0,0,0,0.25);
+}
+.btn.peligro {
+    background: linear-gradient(135deg, #e05a5a, #b83232);
+}
+.btn.peligro:hover {
+    box-shadow: 0 0 22px rgba(224,90,90,0.55);
+}
+
+/* ---------------------- FORMULARIOS / INPUTS ---------------------- */
+input, select, textarea {
+    width: 100%;
+    padding: 12px 14px;
+    border-radius: 10px;
+    border: 1.5px solid rgba(0,0,0,0.12);
+    background: rgba(255,255,255,0.9);
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 0.98rem;
+    margin-bottom: 14px;
+    transition: box-shadow 0.25s ease, border-color 0.25s ease;
+    outline: none;
+}
+input:hover, select:hover, textarea:hover {
+    border-color: var(--azul-vibrante);
+}
+input:focus, select:focus, textarea:focus {
+    border-color: var(--azul-vibrante);
+    box-shadow: 0 0 0 4px var(--azul-glow);
+}
+
+label {
+    font-weight: 600;
+    font-size: 0.88rem;
+    display: block;
+    margin-bottom: 6px;
+    color: var(--texto-oscuro);
+}
+
+/* ---------------------- TABLAS ---------------------- */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 16px;
+    overflow: hidden;
+    border-radius: 12px;
+}
+thead {
+    background: rgba(15, 20, 35, 0.85);
+    color: #fff;
+}
+th, td {
+    padding: 12px 14px;
+    text-align: left;
+    font-size: 0.92rem;
+}
+tbody tr {
+    background: rgba(255,255,255,0.75);
+    transition: background 0.2s ease, color 0.2s ease;
+}
+tbody tr:nth-child(even) {
+    background: rgba(255,255,255,0.6);
+}
+tbody tr:hover {
+    background: rgba(47,143,255,0.16);
+    color: var(--azul-vibrante);
+    font-weight: 600;
+}
+
+/* ---------------------- PANEL / LAYOUT AUTENTICADO ---------------------- */
+.panel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #fff;
+    margin-bottom: 20px;
+}
+.panel-header h1 { color: #fff; margin: 0; }
+.tag-rol {
+    background: var(--dorado);
+    color: #2a1c05;
+    padding: 6px 14px;
+    border-radius: 999px;
+    font-weight: 700;
+    font-size: 0.78rem;
+    letter-spacing: 1px;
+}
+
+.seccion { margin-bottom: 40px; }
+.seccion > h2 { color: #fff; margin-bottom: 14px; text-shadow: 0 2px 12px rgba(0,0,0,0.5);}
+
+.pestañas { display: flex; gap: 10px; margin-bottom: 20px; flex-wrap: wrap; }
+.pestañas button {
+    padding: 10px 20px;
+    border-radius: 999px;
+    border: 1.5px solid rgba(255,255,255,0.6);
+    background: rgba(255,255,255,0.15);
+    color: #fff;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+.pestañas button:hover, .pestañas button.activa {
+    background: var(--azul-vibrante);
+    box-shadow: 0 0 18px var(--azul-glow);
+    border-color: var(--azul-vibrante);
+}
+
+.mensaje-estado {
+    padding: 12px 16px;
+    border-radius: 10px;
+    margin-bottom: 16px;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+.mensaje-estado.exito { background: rgba(80, 200, 120, 0.25); color: #1c5c33; border: 1px solid rgba(80,200,120,0.5); }
+.mensaje-estado.error { background: rgba(224, 90, 90, 0.25); color: #7a1f1f; border: 1px solid rgba(224,90,90,0.5); }
+
+.testimonio {
+    font-style: italic;
+    border-left: 3px solid var(--azul-vibrante);
+    padding-left: 14px;
+    margin: 12px 0;
+}
+
+footer {
+    text-align: center;
+    padding: 24px;
+    color: rgba(255,255,255,0.75);
+    font-size: 0.85rem;
+}

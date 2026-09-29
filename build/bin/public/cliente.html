@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MonVi | Panel Cliente</title>
+<!-- CDN de Font Awesome para los iconos -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="marca"><i class="fa-solid fa-plane"></i> MonVi</div>
+    <div class="enlaces">
+        <span id="nombreUsuario" style="margin-right:14px;color:#e8b566;font-weight:700;">
+            <i class="fa-solid fa-user"></i>
+        </span>
+        <a href="#" id="btnLogout"><i class="fa-solid fa-right-from-bracket"></i> Cerrar Sesión</a>
+    </div>
+</nav>
+
+<div class="contenedor">
+
+    <div class="panel-header">
+        <h1 class="titulo-elegante"><i class="fa-solid fa-user-gear"></i> Panel del Cliente</h1>
+        <span class="tag-rol"><i class="fa-solid fa-user-tag"></i> CLIENTE</span>
+    </div>
+
+    <div id="mensajeGlobal" class="mensaje-estado" style="display:none;"></div>
+
+    <section class="seccion">
+        <h2 class="titulo-elegante"><i class="fa-solid fa-plane-departure"></i> Catálogo de Vuelos</h2>
+        <div id="listaVuelos" class="grid-tarjetas"></div>
+    </section>
+
+    <section class="seccion">
+        <h2 class="titulo-elegante"><i class="fa-solid fa-ticket"></i> Mis Vuelos Comprados</h2>
+        <div class="glass">
+            <table>
+                <thead>
+                    <tr>
+                        <th><i class="fa-solid fa-calendar-days"></i> Fecha</th>
+                        <th><i class="fa-solid fa-plane"></i> Vuelo</th>
+                        <th><i class="fa-solid fa-user-tie"></i> Vendedor</th>
+                        <th><i class="fa-solid fa-circle-info"></i> Estado</th>
+                    </tr>
+                </thead>
+                <tbody id="tablaHistorialCliente"></tbody>
+            </table>
+        </div>
+    </section>
+
+    <section class="seccion">
+        <h2 class="titulo-elegante"><i class="fa-solid fa-comment-dots"></i> Deja tu Comentario</h2>
+        <div class="glass">
+            <form id="formComentario">
+                <label for="textoComentario"><i class="fa-solid fa-pen"></i> ¿Cómo fue tu experiencia?</label>
+                <textarea id="textoComentario" rows="3" required placeholder="Escribe tu opinión..."></textarea>
+                <button type="submit" class="btn secundario">
+                    <i class="fa-solid fa-paper-plane"></i> Enviar Comentario
+                </button>
+            </form>
+        </div>
+    </section>
+
+</div>
+
+<footer>MonVi &copy; 2026 — Panel del Cliente</footer>
+
+<script src="js/cliente.js"></script>
+</body>
+</html>

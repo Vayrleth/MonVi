@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MonVi | Acceso</title>
+<!-- CDN de Font Awesome para los iconos -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="marca"><i class="fa-solid fa-plane"></i> MonVi</div>
+    <div class="enlaces">
+        <a href="index.html"><i class="fa-solid fa-house"></i> Inicio</a>
+    </div>
+</nav>
+
+<div class="contenedor" style="max-width:460px;">
+
+    <div id="mensajeGlobal" class="mensaje-estado" style="display:none;"></div>
+
+    <!-- Caja Iniciar Sesión -->
+    <div class="glass" id="cajaLogin">
+        <h2 class="titulo-elegante" style="text-align:center;">
+            <i class="fa-solid fa-right-to-bracket"></i> Iniciar Sesión
+        </h2>
+        <form id="formLogin">
+            <label for="loginUsuario"><i class="fa-solid fa-user"></i> Usuario</label>
+            <input type="text" id="loginUsuario" required placeholder="ej. cliente1">
+            
+            <label for="loginPassword"><i class="fa-solid fa-lock"></i> Contraseña</label>
+            <input type="password" id="loginPassword" required placeholder="••••••••">
+            
+            <button type="submit" class="btn" style="width:100%;">
+                <i class="fa-solid fa-arrow-right-to-bracket"></i> Entrar
+            </button>
+        </form>
+        <p style="text-align:center;margin-top:16px;">
+            ¿No tienes cuenta? <a href="#" id="irARegistro" style="color:#2f8fff;font-weight:700;"><i class="fa-solid fa-user-plus"></i> Regístrate aquí</a>
+        </p>
+    </div>
+
+    <!-- Caja Registro -->
+    <div class="glass" id="cajaRegistro" style="display:none; margin-top:20px;">
+        <h2 class="titulo-elegante" style="text-align:center;">
+            <i class="fa-solid fa-id-card"></i> Registro de Cliente
+        </h2>
+        <form id="formRegistro">
+            <label for="regUsuario"><i class="fa-solid fa-user-tag"></i> Usuario</label>
+            <input type="text" id="regUsuario" required placeholder="Elige un nombre de usuario">
+            
+            <label for="regPassword"><i class="fa-solid fa-key"></i> Contraseña</label>
+            <input type="password" id="regPassword" required placeholder="Crea una contraseña">
+            
+            <button type="submit" class="btn secundario" style="width:100%;">
+                <i class="fa-solid fa-user-check"></i> Crear Cuenta
+            </button>
+        </form>
+        <p style="text-align:center;margin-top:16px;">
+            ¿Ya tienes cuenta? <a href="#" id="irALogin" style="color:#2f8fff;font-weight:700;"><i class="fa-solid fa-right-to-bracket"></i> Inicia sesión</a>
+        </p>
+    </div>
+
+</div>
+
+<footer>MonVi &copy; 2026 — Acceso para Clientes, Vendedores y Gerencia</footer>
+
+<script src="js/auth.js"></script>
+</body>
+</html>
